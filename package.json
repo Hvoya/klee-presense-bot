@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node init-data.js && nodemon src/server.ts",
-    "build": "node init-data.js && tsc",
-    "start": "node dist/server.js",
-    "build-and-start": "npm run build && npm run start"
+    "dev": "npm run init-data && nodemon src/server.ts",
+    "init-data": "node init-data.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
