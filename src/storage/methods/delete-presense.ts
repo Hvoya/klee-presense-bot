@@ -5,7 +5,7 @@ import { StorageData } from "../storage.types"
 
 export type DeletePresensePayload = {
     user_id: string,
-    date: string,
+    date: number,
 }
 
 

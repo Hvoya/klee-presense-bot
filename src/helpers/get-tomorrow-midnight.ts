@@ -4,5 +4,5 @@ export const getTomorrowMidnight = () => {
     const tommorow = addDays(new Date(), 1);
     const tomorrowMidnight = startOfDay(tommorow);
 
-    return tomorrowMidnight.toString();
+    return tomorrowMidnight.getTime();
 }

@@ -3,7 +3,7 @@ import { StorageData } from "../storage.types";
 
 export type CheckIfPresenseExistsPayload = {
     user_id: string,
-    date: string,
+    date: number,
 }
 
 export const checkIfPresenseExists = (data: StorageData, payload: CheckIfPresenseExistsPayload): boolean => {

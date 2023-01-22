@@ -1,1 +1,1 @@
-export const getPresenseId = (date: string, user_id: string) => `${date}_${user_id}`;
+export const getPresenseId = (date: number, user_id: string) => `${date}_${user_id}`;

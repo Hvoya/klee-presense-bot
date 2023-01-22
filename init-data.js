@@ -11,6 +11,8 @@ const storageTemplete = {
 
 fs.mkdirSync(process.env.STORAGE_PATH, { recursive: true })
 
-fs.writeFileSync(`${process.env.STORAGE_PATH}/storage.json`, JSON.stringify(storageTemplete))
+if (!fs.existsSync(`${process.env.STORAGE_PATH}/storage.json`)) {
+  fs.writeFileSync(`${process.env.STORAGE_PATH}/storage.json`, JSON.stringify(storageTemplete))
 
-console.log('data was initialized')
+  console.log('data was initialized')
+}

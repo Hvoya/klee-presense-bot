@@ -8,7 +8,7 @@ export type User = {
 
 export type Presense = {
     id: string,
-    date: string,
+    date: number,
     probability: number,
     comment: string,
     user_id: string
