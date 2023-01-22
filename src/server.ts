@@ -14,6 +14,8 @@ import { getDiscardPresenseHandler } from './handlers/get-discard-presense-handl
 import { initRestServer } from './rest';
 
 try {
+    console.log('Data path is ' + process.env.STORAGE_PATH)
+
     const bot = new Telegraf<SceneContextMessageUpdate>(process.env.BOT_TOKEN as string);
     const storage = getStorage();
 
