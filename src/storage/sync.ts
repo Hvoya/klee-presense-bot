@@ -3,7 +3,7 @@ import path from 'path';
 import { StorageData } from './storage.types';
 
 export const write = (data: StorageData) => {
-    fs.writeFileSync(path.resolve(`${process.env.STORAGE_PATH}/storage.json`), JSON.stringify(data));
+    fs.writeFileSync(`${process.env.STORAGE_PATH}/storage.json`, JSON.stringify(data));
 }
 
 export const load = (): StorageData => {

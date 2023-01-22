@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 export const downloadDataHandler = (_: Request, res: Response) => {
-    const data = fs.readFileSync(path.resolve(process.cwd(), 'data/storage.json')).toString();
+    const data = fs.readFileSync(`${process.env.STORAGE_PATH}/storage.json`).toString();
 
     const json = JSON.parse(data);
     
