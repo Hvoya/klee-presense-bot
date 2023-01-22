@@ -48,6 +48,7 @@ export const getTextHandler = (storage: Storage) => async (ctx: SceneContextMess
       }
     }
   } catch(e) {
+    console.error(e);
     goToMainMenu(ctx, texts.bot.replyDefaultError)
   }
 };

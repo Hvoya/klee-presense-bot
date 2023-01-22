@@ -26,6 +26,7 @@ export const getCommonPresenseHandler = (storage: Storage) => async (ctx: SceneC
 
     await ctx.reply(texts.bot.getPresenseList(presenses), mainMenu);
    } catch(e) {
+        console.error(e);
         goToMainMenu(ctx, texts.bot.replyDefaultError)
    }
 }

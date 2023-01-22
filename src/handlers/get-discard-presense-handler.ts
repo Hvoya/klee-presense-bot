@@ -28,6 +28,7 @@ export const getDiscardPresenseHandler = (storage: Storage) => async (ctx: Scene
     
         await ctx.reply(texts.bot.replyDiscardPresense);
     } catch(e) {
+        console.error(e);
         goToMainMenu(ctx, texts.bot.replyDefaultError)
     }
 }

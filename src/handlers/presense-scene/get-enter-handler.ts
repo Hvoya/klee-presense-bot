@@ -11,6 +11,7 @@ export const getEnterHandler = (_: Storage) => async (ctx: SceneContextMessageUp
 
         await ctx.reply(texts.bot.askPresenseProbability, Markup.removeKeyboard().extra());
     } catch(e) {
+        console.error(e);
         goToMainMenu(ctx, texts.bot.replyDefaultError)
     }
 };

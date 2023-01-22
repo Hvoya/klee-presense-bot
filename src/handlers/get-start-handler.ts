@@ -17,6 +17,7 @@ export const getStartHandler = (storage: Storage) => async (ctx: SceneContextMes
     
         await ctx.reply(texts.bot.start, mainMenu);
     } catch(e) {
+        console.error(e);
         goToMainMenu(ctx, texts.bot.replyDefaultError)
     }
 }
