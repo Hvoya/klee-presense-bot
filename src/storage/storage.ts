@@ -1,6 +1,7 @@
 import { checkIfPresenseExists } from "./methods/check-if-presense-exists";
 import { deletePresense } from "./methods/delete-presense";
 import { getPresenses } from "./methods/get-presenses";
+import { getUser } from "./methods/get-user";
 import { upsertPresense } from "./methods/upsert-presense";
 import { upsertUser } from "./methods/upsert-user";
 import { StorageData } from "./storage.types";
@@ -27,6 +28,7 @@ export const getStorage = () => {
         update: () => data = load(),
         user: {
             upsert: getSetter(upsertUser),
+            get: getGetter(getUser)
         },
         presense: {
             upsert: getSetter(upsertPresense),

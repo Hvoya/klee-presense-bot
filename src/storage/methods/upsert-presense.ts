@@ -11,7 +11,7 @@ export const upsertPresense = (data: StorageData, payload: UpsertPresensePayload
 
     const presense = {...payload, id: presenseId};
 
-    const presensesIds =  [...data.presensesIds, presenseId];
+    const presensesIds =  _.uniq([...data.presensesIds, presenseId]);
 
     return _(data)
         .set(['presenseById', presenseId], presense)

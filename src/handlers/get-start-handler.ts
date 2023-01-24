@@ -5,16 +5,8 @@ import { goToMainMenu } from "../helpers/scenes/go-to-main-menu";
 import { Storage } from "../storage";
 
 
-export const getStartHandler = (storage: Storage) => async (ctx: SceneContextMessageUpdate) => {
+export const getStartHandler = (_: Storage) => async (ctx: SceneContextMessageUpdate) => {
     try {
-        storage.user.upsert({
-            telegram_id: ctx.message!.from!.id,
-            chat_id: ctx.chat!.id,
-            username: ctx.message!.from!.username,
-            name: ctx.message!.from!.first_name,
-            surname: ctx.message!.from!.last_name
-        })
-    
         await ctx.reply(texts.bot.start, mainMenu);
     } catch(e) {
         console.error(e);

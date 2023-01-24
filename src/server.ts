@@ -12,14 +12,14 @@ import { initScenes } from './scenes';
 import { getStorage } from './storage';
 import { getDiscardPresenseHandler } from './handlers/get-discard-presense-handler';
 import { initRestServer } from './rest';
+import { getUserSyncMiddleware } from './middleware/user-sync';
 
 try {
-    console.log('Data path is ' + process.env.STORAGE_PATH)
-
     const bot = new Telegraf<SceneContextMessageUpdate>(process.env.BOT_TOKEN as string);
     const storage = getStorage();
 
     bot.use(session());
+    bot.use(getUserSyncMiddleware(storage))
     initScenes(storage, bot);
 
     bot.start(getStartHandler(storage) as any)
