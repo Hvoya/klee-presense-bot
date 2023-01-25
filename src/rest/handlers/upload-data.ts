@@ -7,5 +7,6 @@ export const uploadDataHandler = (req: Request, res: Response) => {
         JSON.stringify(req.body)
     );
     
-    return res.status(200);
+    console.log('called')
+    return res.status(200).send();
 };
