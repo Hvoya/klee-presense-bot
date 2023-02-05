@@ -1,1 +1,0 @@
-export const formatUserId = (telegram_id: number) => `tg_${telegram_id}`

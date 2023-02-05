@@ -1,0 +1,18 @@
+export const stickers = {
+  sadKlee: 'CAACAgIAAxkBAAEcyRBj3nAUiQnfRJj6aUueA6cZ8kYdewACrAsAAqf_QUgcGax9WTL6wC4E',
+  kleeAndCat: 'CAACAgIAAxkBAAEcyMZj3mzsN79wou7UdGjr6wQlotqK3AAC4QsAAmmeQEgIPeEJUlAsii4E'
+}
+
+export const gifs = {
+  attackedKlee: 'CgACAgIAAxkBAAIJ4mPeW31GJDbBAQfy-vZwM6DYyOKaAAISCgACzcdISEdSquCGhR57LgQ',
+  jumpingKlee: 'CgACAgIAAxkBAAIJ6WPeW-Ij27_Kmgj4tNaR93eIzlXSAAJdHQACISVoSQ8TLjx-0bmfLgQ',
+  waitingKlee: 'CgACAgQAAxkBAAIJ7mPeXBmTDqWM5AaMoaydaRIymNIhAAICAwACkU8VU8QecZuB7k4pLgQ',
+  flexingKlee: 'CgACAgIAAxkBAAIJ82PeXHjEH15W6S-6dstZ7lzlb1PYAAJoHAACltDhS0R3inqwZjFtLgQ',
+  diyingOfCringeKlee: 'CgACAgIAAxkBAAIJ92PeXJoRYmFFzESo0NpbyPOH9I27AALVEwAC0u7QSbjWOZvfWio4LgQ',
+  helloChatKlee: 'CgACAgQAAxkBAAIJ_2PeX6FBbi1K5LyUNfOsjDwzEohSAAJnAwAC75TUU1arPtf6xNe6LgQ',
+  backToBoomKlee: 'CgACAgQAAxkBAAIKAmPeX-2ilNqB6In-jgFM7LzytEogAAJlAwACqXGUUh4suU_I8trfLgQ',
+  seriousKlee: 'CgACAgQAAxkBAAIKA2PeYAsjpo5MQ4fFIb75mKcmi0cnAAMDAAJBdQxTZ7-d8ivBMwsuBA',
+  agroKlee: 'CgACAgQAAxkBAAIKBGPeYCW4hqv3B0FqGEAZ9X-GBOFaAAIeAwACNz4MU7enx4oFjY2CLgQ',
+  boomKlee: 'CgACAgQAAxkBAAIKBWPeYD_y00K9BSivsfhMtek4G9jpAAIwAwAC6WU1U9_PgM6wggGiLgQ',
+  cryingKlee: 'CgACAgQAAxkBAAIKBmPeYF6cRLPF7V2Ca11XXEtGZb7RAAIhAwAC51wNU9Cab5zhgO7wLgQ'
+}

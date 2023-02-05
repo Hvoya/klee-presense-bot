@@ -1,38 +1,25 @@
-import { Telegraf } from 'telegraf';
-import { session } from 'telegraf';
-import { SceneContextMessageUpdate } from 'telegraf/typings/stage';
-import dotenv from 'dotenv';
+/* eslint-disable import/first */
+import express from 'express'
+import dotenv from 'dotenv'
 
-dotenv.config();
+dotenv.config()
 
-import { texts } from './content/texts';
-import { getCommonPresenseHandler } from './handlers/get-common-presense-handler';
-import { getStartHandler } from './handlers/get-start-handler';
-import { initScenes } from './scenes';
-import { getStorage } from './storage';
-import { getDiscardPresenseHandler } from './handlers/get-discard-presense-handler';
-import { initRestServer } from './rest';
-import { getUserSyncMiddleware } from './middleware/user-sync';
-import { getLoggingMiddleware } from './middleware/logging';
+import { initAdmin } from './admin/init'
+import { initCronJobs } from './cron'
+import { launchBot } from './bot'
 
-try {
-    const bot = new Telegraf<SceneContextMessageUpdate>(process.env.BOT_TOKEN as string);
-    const storage = getStorage();
+const start = async (): Promise<void> => {
+  try {
+    const app = express()
 
-    bot.use(session());
-    bot.use(getLoggingMiddleware())
-    bot.use(getUserSyncMiddleware(storage));
-    initScenes(storage, bot);
+    await initAdmin(app)
+    launchBot()
+    initCronJobs()
 
-    bot.start(getStartHandler(storage) as any)
-  
-    bot.hears(texts.user.buttonCommonPresense, getCommonPresenseHandler(storage));
-    bot.hears(texts.user.buttonDiscardPresense, getDiscardPresenseHandler(storage));
-    bot.hears(texts.user.buttonSubmitPresense, (ctx) => ctx.scene.enter('PRESENSE'));
-  
-    bot.launch();
-
-    initRestServer();
-} catch (e) {
-    console.log(e);
+    app.listen(process.env.SERVER_PORT)
+  } catch (e) {
+    console.log(e)
+  }
 }
+
+void start()

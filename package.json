@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run init-data && nodemon src/server.ts",
-    "init-data": "node init-data.js",
-    "build": "tsc"
+    "dev": "nodemon src/server.ts",
+    "build": "tsc",
+    "db:migrate": "node src/db/migrate.mjs",
+    "lint": "eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -16,19 +17,29 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/express": "^4.17.15",
-    "@types/lodash": "^4.14.191",
+    "@adminjs/express": "^5.1.0",
+    "@adminjs/sql": "^1.0.0",
+    "@types/cron": "^2.0.0",
+    "@types/pg-format": "^1.0.2",
+    "adminjs": "^6.8.2",
+    "cron": "^2.2.0",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "lodash": "^4.17.21",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.3",
     "nodemon": "^2.0.20",
+    "pg": "^8.9.0",
+    "pg-format": "^1.0.4",
+    "postgrator": "^7.1.1",
     "telegraf": "^3.39.0",
     "ts-node": "^10.9.1",
-    "uid": "^2.0.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
+    "@types/pg": "^8.6.6",
+    "@types/express": "^4.17.15",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "eslint": "^8.32.0",
     "eslint-config-standard-with-typescript": "^30.0.0",

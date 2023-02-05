@@ -1,1 +1,0 @@
-export const getPresenseId = (date: number, user_id: string) => `${date}_${user_id}`;

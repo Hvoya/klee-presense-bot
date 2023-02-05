@@ -4,3 +4,4 @@ data.json
 /dist
 /data
 .DS_Store
+/.adminjs
