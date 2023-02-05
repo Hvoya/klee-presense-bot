@@ -17,5 +17,7 @@ export const launchBot = (): void => {
 
   bot.start(startHandler)
 
+  bot.on('animation', data => { console.log(data.message?.animation.file_id) })
+
   void bot.launch()
 }
