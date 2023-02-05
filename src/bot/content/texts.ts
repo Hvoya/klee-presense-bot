@@ -43,7 +43,7 @@ const presenseListAllWeek = (dateNodes: DateNode[], endOfWeek: boolean): string 
 
   return `${heading}
     
-    ${dateNodes.map((node) =>
+${dateNodes.map((node) =>
 `${capitalize(format(node.date, 'EEEE', { locale: ru }))}:
 ${presenseList(node.users, true)}`
     ).join('\n\n')}`
