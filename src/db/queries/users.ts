@@ -36,3 +36,19 @@ export const createUserQuery = async (paylaod: CreateUserPayload): Promise<void>
 
   await fillUserPresensesTillEndOfYear(createdUser)
 }
+
+interface ChangeUserSpacePayload {
+  user_id: number
+  space_id: number
+}
+
+export const changeUserSpace = async (paylaod: ChangeUserSpacePayload): Promise<void> => {
+  await pool.query(
+        `
+        UPDATE users
+        SET space_id = $1
+        WHERE id = $2
+        `,
+        [paylaod.space_id, paylaod.user_id]
+  )
+}

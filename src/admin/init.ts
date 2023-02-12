@@ -17,6 +17,7 @@ export const initAdmin = async (app: Express): Promise<void> => {
   })
 
   const db = await new Adapter('postgresql', {
+    host: process.env.DATABASE_HOST,
     port: process.env.DATABASE_PORT as unknown as number,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,

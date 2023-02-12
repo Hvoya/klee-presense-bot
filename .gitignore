@@ -5,3 +5,4 @@ data.json
 /data
 .DS_Store
 /.adminjs
+postgres-data

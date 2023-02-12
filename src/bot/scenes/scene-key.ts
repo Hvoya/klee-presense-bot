@@ -4,5 +4,6 @@ export enum SceneKey {
   PresenseDisplay = '3',
   PresenseManagement = '4',
   SpaceChoice = '5',
-  Wish = '6'
+  Wish = '6',
+  SpaceSettings = '7'
 }

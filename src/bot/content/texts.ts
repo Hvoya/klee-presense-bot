@@ -49,13 +49,18 @@ ${presenseList(node.users, true)}`
     ).join('\n\n')}`
 }
 
-const spaceQuestion = (spaces: Space[]): string =>
-`Так-так, у нас новенький! Давай-ка я закреплю за тобой спейс. (Закреплённый спейс можешь поменять в любое время.)
+const spaceQuestion = (spaces: Space[], isNewbee: boolean): string => {
+  const startMessage = isNewbee
+    // eslint-disable-next-line max-len
+    ? 'Так-так, у нас новенький! Давай-ка я закреплю за тобой спейс. (Закреплённый спейс можешь поменять в любое время.)'
+    : 'Хочешь поменять спейс?'
+  return `${startMessage}
 Вот список доступных:
 
 ${spaces.map(space => `${space.id}. ${space.name}`).join('\n')}
 
 Выбери тот, в который хочешь ходить!`
+}
 
 const wrongVariant = (variants: string[]): string =>
 `Давай-ка я тебе объясню кое-что. Ты должен выбрать что-то из:
@@ -108,6 +113,7 @@ export const texts = {
       allWeekFillingDone: 'Готово! Ты заполнил всю неделю. Молодец!',
       thanksForWith: 'Спасибо за пожелание! Сделаем обязательно-обязательно!',
       afterGoToMainMenu: 'Начинаем сначала!',
+      spaceChanged: 'Готово! Я изменила спейс, к которому ты прикреплён!',
       defaultError: 'Ой-ой! Случилось что-то нехорошее... Давай начнём занаво!'
     },
     contruct: {

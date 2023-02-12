@@ -11,7 +11,7 @@ export const enterHandler = async (ctx: SceneContextMessageUpdate): Promise<void
     await ctx.reply(texts.bot.start)
     await ctx.reply(
       texts.bot.contruct
-        .spaceQuestion(spaces),
+        .spaceQuestion(spaces, true),
       getSpaceKeyboard(spaces.map(space => space.id.toString()))
     )
   } catch (e) {
